@@ -1,0 +1,156 @@
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+input,
+textarea,
+select,
+button {
+  outline: none;
+}
+input {
+  line-height: normal;
+}
+label,
+button {
+  cursor: pointer;
+}
+a {
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1;
+  font-size: 1.6rem;
+}
+.container {
+  padding: 2rem;
+  background-color: #eee;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.btn {
+  padding: 5px 1rem;
+  border: 0;
+  font-size: 1.3rem;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: all 0.25s linear;
+  width: 10rem;
+}
+.btn:hover {
+  color: #333;
+}
+.fill-infor {
+  display: flex;
+  justify-content: space-between;
+}
+.image {
+  width: 50%;
+}
+img {
+  width: 100%;
+}
+#form {
+  width: 50%;
+}
+.form-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.fill {
+  margin-bottom: 2rem;
+}
+.fill-btn {
+  display: flex;
+  justify-content: space-between;
+}
+label,
+input {
+  display: block;
+}
+label {
+  margin-bottom: 1rem;
+}
+input {
+  width: 100%;
+  padding: 1rem 2rem;
+  border: 0;
+  font-size: 1.6rem;
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+}
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+input::-moz-placeholder {
+  color: #ccc;
+}
+input:-ms-input-placeholder {
+  color: #ccc;
+}
+input::-ms-input-placeholder {
+  color: #ccc;
+}
+input::placeholder {
+  color: #ccc;
+}
+.btn-submit {
+  width: 100%;
+  font-size: 1.6rem;
+  background-color: #3e6fd7;
+  color: white;
+}
+.btn-cancel {
+  font-size: 1.6rem;
+  background-color: #ee4d2d;
+  width: 100%;
+  color: white;
+}
+.manage {
+  width: 50%;
+  margin-left: 2rem;
+}
+.infor-item {
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: center;
+}
+.infor-desc {
+  margin: 0 2rem;
+}
+.infor-desc span {
+  display: block;
+  margin: 1rem 0;
+}
+.button {
+  margin-left: auto;
+}
+.filled {
+  font-size: 2.8rem;
+  margin-bottom: 2rem;
+}
+.your-image {
+  width: 20%;
+  /* height: 5rem; */
+}
+
+.btn-update {
+  background-color: #ffd839;
+  margin-bottom: 1rem;
+}
+.btn-delete {
+  background-color: #d62037;
+}

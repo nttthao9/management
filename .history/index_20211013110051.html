@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Promise</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-11/css/all.css"
+    integrity="sha512-xO/VZFNBvip9IT+BD6Nq/pHdBvKeFcwygKqARlegjQ+5A68KsMSYrPbGP1oYow5ec9Tqq8peJXcn5J1bD4O00w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./.vscode/style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="fill-infor">
+      <form action="" id="form" autocomplete="off">
+        <h2 class="form-title">Fill your information</h2>
+        <div class="fill fill-name">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" autocomplete="off" placeholder="Enter your name">
+        </div>
+        <div class="fill fill-avatar">
+          <label for="avatar">Avatar:</label>
+          <input type="text" id="avatar" name="avatar" placeholder="Enter your link avatar">
+        </div>
+        <div class="fill fill-link">
+          <label for="link-web">Website</label>
+          <input type="link-web" id="link-web" name="link-web" placeholder="Enter your link web">
+        </div>
+        <div class="fill fill-company">
+          <label for="company">Company name</label>
+          <input type="text" id="company-name" name="company-name" placeholder="Enter your company name">
+          <label for="company">Company address</label>
+          <input type="text" id="company-address" name="company-address" placeholder="Enter your company address">
+        </div>
+        <div class="fill-btn">
+          <button type="submit" class=" btn btn-submit">Submit</button>
+          <button type="submit" class="btn btn-cancel">Cancel</button>
+        </div>
+
+      </form>
+      <div class="manage">
+        <h3 class="filled">Your Information</h3>
+        <div class="manage-infor">
+          <div class="your-image">
+            <img src="http://lorempixel.com/640/480/abstract/" alt="">
+          </div>
+          <div class="your-name">
+            <span class="name">John Doe</span>
+          </div>
+          <div class="your-link">
+            <span class="name">aklhfab.com</span>
+          </div>
+          <div class="your-address">
+            <span class="name">Main Street, abdo</span>
+          </div>
+          <div class="your-company">
+            <span class="name">ABC company</span>
+          </div>
+          <button type="submit" class="btn btn-update">Update</button>
+          <button type="submit" class=" btn btn-delete">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+
+</html>
