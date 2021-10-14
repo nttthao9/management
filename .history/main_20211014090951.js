@@ -6,12 +6,10 @@ const inputLinkWeb = document.querySelector('#link-web');
 const inputcompanyName = document.querySelector('#company-name');
 const inputcompanyAddress = document.querySelector('#company-address');
 const btnSubmit = document.querySelector('.btn-submit');
-const updateBtn = document.querySelector('.update');
 const btnCancel = document.querySelector('.btn-cancel');
 
 let createData = {};
 let company = {};
-let listItems = [];
 inputName.addEventListener('change', () => {
   createData.name = inputName.value;
 });
@@ -28,29 +26,15 @@ inputcompanyAddress.addEventListener('change', () => {
   company.adress = inputcompanyAddress.value;
   createData.company = company;
 });
-
 btnSubmit.addEventListener('click', (e) => {
-  updateBtn.style.display = 'none';
   e.preventDefault();
-  postData(createData).then(() => getData());
-  clearData();
-});
-btnCancel.addEventListener('click', (e) => {
-  e.preventDefault();
-  inputName.value = '';
-  inputAvatar.value = '';
-  inputLinkWeb.value = '';
-  inputcompanyAddress.value = '';
-  inputcompanyName.value = '';
+  postData(createData).then((result) => renderUser(result));
 });
 const getData = async () => {
   const res = await fetch(api);
-  items = await res.json();
-  listItems = [...items];
-  renderUser(listItems);
+  return res.json();
 };
-
-getData(api);
+getData(api).then((result) => renderUser(result));
 
 const postData = async (createData) => {
   const res = await fetch(api, {
@@ -60,7 +44,6 @@ const postData = async (createData) => {
     },
     body: JSON.stringify(createData),
   });
-  alert('you added a new item!');
   return res.json();
 };
 
@@ -68,7 +51,7 @@ function renderUser(data) {
   let inforItem = data.map((item) => {
     return ` <div class="infor-item">
     <div class="your-image">
-      <img src="${item.avatar}" alt="" class="image">
+      <img src="${item.avatar}" alt="">
     </div>
     <div class="infor-desc">
       <span class="name">${item.name}</span>
@@ -87,58 +70,13 @@ function renderUser(data) {
   const btnUpdate = document.querySelectorAll('.btn-update');
   const btnDelete = document.querySelectorAll('.btn-delete');
   btnDelete.forEach((item) => item.addEventListener('click', handleDelete));
-  btnUpdate.forEach((item) => item.addEventListener('click', handleUpDate));
+  // btnUpdate.addEventListener('click', handleUpdate(data));
 }
 
 function handleDelete(e) {
   const id = e.target.dataset.delete;
+  console.log(id);
   fetch(`${api}/${id}`, {
     method: 'DELETE',
-  })
-    .then((res) => res.json())
-    .then(() => getData());
-}
-
-function handleUpDate(e) {
-  updateBtn.style.display = 'block';
-  btnSubmit.style.display = 'none';
-  const id = e.target.dataset.update;
-  const itemParent = e.target.parentNode.parentNode;
-  inputName.value = itemParent.querySelector('.name').textContent;
-  inputAvatar.value = itemParent.querySelector('.image').src;
-  inputLinkWeb.value = itemParent.querySelector('.website').textContent;
-  inputcompanyName.value =
-    itemParent.querySelector('.company-name').textContent;
-  inputcompanyAddress.value =
-    itemParent.querySelector('.company-address').textContent;
-  updateBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    fetch(`${api}/${id}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name: inputName.value,
-        avatar: inputAvatar.value,
-        website: inputLinkWeb.value,
-        company: {
-          name: inputcompanyName.value,
-          adress: inputcompanyAddress.value,
-        },
-      }),
-    })
-      .then((res) => res.json())
-      .then(() => getData());
-    clearData();
-    updateBtn.style.display = 'none';
-    btnSubmit.style.display = 'block';
-  });
-}
-function clearData() {
-  inputName.value = '';
-  inputAvatar.value = '';
-  inputLinkWeb.value = '';
-  inputcompanyName.value = '';
-  inputcompanyAddress.value = '';
+  }).then((res) => res.json());
 }

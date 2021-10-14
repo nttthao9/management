@@ -28,12 +28,10 @@ inputcompanyAddress.addEventListener('change', () => {
   company.adress = inputcompanyAddress.value;
   createData.company = company;
 });
-
 btnSubmit.addEventListener('click', (e) => {
   updateBtn.style.display = 'none';
   e.preventDefault();
   postData(createData).then(() => getData());
-  clearData();
 });
 btnCancel.addEventListener('click', (e) => {
   e.preventDefault();
@@ -60,7 +58,6 @@ const postData = async (createData) => {
     },
     body: JSON.stringify(createData),
   });
-  alert('you added a new item!');
   return res.json();
 };
 
@@ -130,15 +127,11 @@ function handleUpDate(e) {
     })
       .then((res) => res.json())
       .then(() => getData());
-    clearData();
-    updateBtn.style.display = 'none';
-    btnSubmit.style.display = 'block';
+    inputName.value = '';
+    inputAvatar.value = '';
+    inputLinkWeb.value = '';
+    inputcompanyName.value = '';
+    inputcompanyAddress.value = '';
   });
-}
-function clearData() {
-  inputName.value = '';
-  inputAvatar.value = '';
-  inputLinkWeb.value = '';
-  inputcompanyName.value = '';
-  inputcompanyAddress.value = '';
+  console.log('hello');
 }

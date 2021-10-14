@@ -49,7 +49,6 @@ body {
   cursor: pointer;
   transition: all 0.25s linear;
   width: 10rem;
-  border-radius: 5px;
 }
 .btn:hover {
   color: #333;
@@ -117,14 +116,12 @@ input:focus {
   font-size: 1.6rem;
   background-color: #3e6fd7;
   color: white;
-  border-radius: 5px 0 0 5px;
 }
 .btn-cancel {
   font-size: 1.6rem;
   background-color: #ee4d2d;
   width: 100%;
   color: white;
-  border-radius: 0 5px 5px 0;
 }
 .manage {
   width: 50%;
@@ -146,7 +143,7 @@ input:focus {
   margin-left: auto;
 }
 .filled {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
 }
 .your-image {
@@ -167,7 +164,6 @@ input:focus {
   width: 100%;
   font-size: 1.6rem;
   color: white;
-  border-radius: 5px 0 0 5px;
 }
 .manage-infor {
   height: 80vh;

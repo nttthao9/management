@@ -49,7 +49,6 @@ body {
   cursor: pointer;
   transition: all 0.25s linear;
   width: 10rem;
-  border-radius: 5px;
 }
 .btn:hover {
   color: #333;
@@ -89,7 +88,6 @@ input {
   width: 100%;
   padding: 1rem 2rem;
   border: 0;
-  border-radius: 5px;
   font-size: 1.6rem;
   font-family: 'Poppins', sans-serif;
   color: #333;
@@ -109,22 +107,17 @@ input::-ms-input-placeholder {
 input::placeholder {
   color: #ccc;
 }
-input:focus {
-  border: 1px solid #009fe6;
-}
 .btn-submit {
   width: 100%;
   font-size: 1.6rem;
   background-color: #3e6fd7;
   color: white;
-  border-radius: 5px 0 0 5px;
 }
 .btn-cancel {
   font-size: 1.6rem;
   background-color: #ee4d2d;
   width: 100%;
   color: white;
-  border-radius: 0 5px 5px 0;
 }
 .manage {
   width: 50%;
@@ -146,7 +139,7 @@ input:focus {
   margin-left: auto;
 }
 .filled {
-  font-size: 3rem;
+  font-size: 2.8rem;
   margin-bottom: 2rem;
 }
 .your-image {
@@ -160,19 +153,4 @@ input:focus {
 }
 .btn-delete {
   background-color: #d62037;
-}
-.update {
-  display: none;
-  background-color: #0870b8;
-  width: 100%;
-  font-size: 1.6rem;
-  color: white;
-  border-radius: 5px 0 0 5px;
-}
-.manage-infor {
-  height: 80vh;
-  overflow-y: scroll;
-}
-#company-name {
-  margin-bottom: 2rem;
 }
